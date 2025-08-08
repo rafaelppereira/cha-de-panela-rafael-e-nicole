@@ -35,12 +35,12 @@ export function Home() {
       });
     }
 
-    if (hash === "#detalhes-da-festa") {
-      window.scroll({
-        top: refDetails.current.offsetTop - 80,
-        behavior: "smooth",
-      });
-    }
+    // if (hash === "#detalhes-da-festa") {
+    //   window.scroll({
+    //     top: refDetails.current.offsetTop - 80,
+    //     behavior: "smooth",
+    //   });
+    // }
 
     if (hash === "#lista-de-presentes") {
       window.scroll({
@@ -121,7 +121,7 @@ export function Home() {
         </div>
       </section>
 
-      <section ref={refDetails} className="border-b bg-zinc-50">
+      <section ref={refDetails} className="bg-zinc-50">
         <div className="container py-14">
           <div className="flex items-center gap-5 lg:gap-10">
             <div className="hidden h-px w-full flex-1 bg-[#a09389]/20 lg:block" />
@@ -184,28 +184,28 @@ export function Home() {
           </div>
 
           <div className="flex lg:justify-center">
-            <p className="text-md mt-3 max-w-md lg:text-center text-zinc-500 lg:text-lg">
+            <p className="text-md mt-3 max-w-md text-zinc-500 lg:text-center lg:text-lg">
               Abaixo temos as listas de presentes que montamos em várias lojas
               diferentes, ajude somente se você puder! só sua presença já é mais
               que especial.
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+          <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
             {settings.lists.map((list, i) => {
               return (
                 <div key={i} className="rounded-md border bg-white p-4">
                   <div className="flex items-center gap-2">
-                    <div className="size-10 rounded-full bg-zinc-50 flex items-center justify-center text-zinc-600">
+                    <div className="flex size-10 items-center justify-center rounded-full bg-zinc-50 text-zinc-600">
                       <HeartHandshakeIcon className="size-4" />
                     </div>
                     <h2 className="text-xl font-semibold text-zinc-600">
                       {list.title}
                     </h2>
                   </div>
-                  <p className="mt-2 text-zinc-600 text-sm">
-                    Preparamos uma seleção especial de presentes na {list.title} para
-                    tornar seu momento ainda mais especial. Confira a lista
+                  <p className="mt-2 text-sm text-zinc-600">
+                    Preparamos uma seleção especial de presentes na {list.title}{" "}
+                    para tornar seu momento ainda mais especial. Confira a lista
                     completa.
                   </p>
 
@@ -224,6 +224,37 @@ export function Home() {
                 </div>
               );
             })}
+          </div>
+
+          <div className="mt-10 flex flex-col items-center gap-5 md:gap-10 md:flex-row">
+            <div className="flex-1">
+              <h2 className="text-2xl font-semibold text-zinc-500">
+                Prefere de outra maneira?
+              </h2>
+              <p className="mt-5 font-medium text-zinc-500">
+                Se preferir não escolher um presente da lista e optar por
+                contribuir em dinheiro, disponibilizamos o QR Code ao lado para
+                que você faça o valor que desejar. E lembre-se: se não puder
+                contribuir, sua presença já será o nosso maior presente!
+              </p>
+
+              <div className="mt-5 inline-flex items-center gap-3 rounded-md border bg-white p-2 text-sm">
+                <CopyToClipboard text="cbdc8f29-9ff1-47e4-9819-11e922758985" onCopy={() => toast.success('PIX copiado com sucesso')}>
+                  <Button
+                    size="icon"
+                    title="Clique para copiar o pix"
+                    className="bg-[#a09389] text-white transition-all hover:bg-[#baaa9e] hover:brightness-90"
+                  >
+                    <CopyIcon className="size-4" />
+                  </Button>
+                </CopyToClipboard>
+
+                <h2>cbdc8f29-9ff1-47e4-9819-11e922758985</h2>
+              </div>
+            </div>
+            <div className="w-full md:w-auto flex justify-start">
+              <img src="/pix.jpeg" alt="Imagem do PIX" className="w-full md:w-[250px]" />
+            </div>
           </div>
         </div>
       </section>
