@@ -5,7 +5,9 @@ import {
   CheckCheckIcon,
   CopyIcon,
   CopyrightIcon,
+  HeartHandshakeIcon,
   InstagramIcon,
+  Link2Icon,
 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import { Link, useLocation } from "react-router-dom";
@@ -19,33 +21,41 @@ import { useEffect, useRef } from "react";
 import { DialogConfirm } from "@/components/dialog-confirm";
 
 export function Home() {
-  const { hash } = useLocation()
+  const { hash } = useLocation();
 
-  const refDetails: any = useRef()
-  const refLocal: any = useRef()
+  const refDetails: any = useRef();
+  const refLocal: any = useRef();
+  const refGifts: any = useRef();
 
   useEffect(() => {
-    if (hash === '') {
+    if (hash === "") {
       window.scroll({
         top: 0,
-        behavior: 'smooth'
-      })
+        behavior: "smooth",
+      });
     }
 
-    if (hash === '#detalhes-da-festa') {
+    if (hash === "#detalhes-da-festa") {
       window.scroll({
         top: refDetails.current.offsetTop - 80,
-        behavior: 'smooth'
-      })
+        behavior: "smooth",
+      });
     }
 
-    if (hash === '#local-da-festa') {
+    if (hash === "#lista-de-presentes") {
+      window.scroll({
+        top: refGifts.current.offsetTop - 80,
+        behavior: "smooth",
+      });
+    }
+
+    if (hash === "#local-da-festa") {
       window.scroll({
         top: refLocal.current.offsetTop - 80,
-        behavior: 'smooth'
-      })
+        behavior: "smooth",
+      });
     }
-  }, [hash])
+  }, [hash]);
 
   return (
     <main>
@@ -53,7 +63,7 @@ export function Home() {
 
       <Header />
 
-      <section className="bg-banner overflow-hidden relative mt-16 lg:mt-20 flex h-[30rem] lg:h-[40rem] flex-col items-center justify-center bg-center">
+      <section className="relative mt-16 flex h-[30rem] flex-col items-center justify-center overflow-hidden bg-banner bg-center lg:mt-20 lg:h-[40rem]">
         <img
           src="/detail-left.svg"
           alt="Detalhe da esquerda"
@@ -65,16 +75,16 @@ export function Home() {
           className="absolute -right-20 top-0 hidden lg:block"
         />
 
-        <div className="flex mb-20 lg:mb-0 select-none px-8 flex-col items-center text-center">
-          <h2 className="mt-8 font-corinthia text-6xl lg:text-8xl font-extrabold text-[#baaa9e]">
+        <div className="mb-20 flex select-none flex-col items-center px-8 text-center lg:mb-0">
+          <h2 className="mt-8 font-corinthia text-6xl font-extrabold text-[#baaa9e] lg:text-8xl">
             Rafael e Nicole
           </h2>
-          <p className="mt-5 max-w-sm lg:max-w-lg text-md lg:text-lg font-medium text-zinc-500">
+          <p className="text-md mt-5 max-w-sm font-medium text-zinc-500 lg:max-w-lg lg:text-lg">
             Você foi convidado para fazer parte dessa grande festa e comemorar
             conosco a nossa nova fase de vida.
           </p>
 
-          <span className="font-questrial mt-10 block text-2xl lg:text-3xl font-medium text-zinc-500">
+          <span className="mt-10 block font-questrial text-2xl font-medium text-zinc-500 lg:text-3xl">
             {format(
               new Date(settings.date + "T03:00:00"),
               "dd '.' MM '.' yyyy",
@@ -97,10 +107,10 @@ export function Home() {
 
       <section className="bg-[#a09389]">
         <div className="container flex select-none flex-col items-center py-20">
-          <h2 className="font-corinthia text-5xl lg:text-7xl text-white">
+          <h2 className="font-corinthia text-5xl text-white lg:text-7xl">
             Contagem regressiva
           </h2>
-          <p className="mt-3 max-w-sm text-center text-md lg:text-lg text-white">
+          <p className="text-md mt-3 max-w-sm text-center text-white lg:text-lg">
             Estamos contando cada segundo para ter essa festa incrível com sua
             presença.
           </p>
@@ -114,9 +124,9 @@ export function Home() {
       <section ref={refDetails} className="border-b bg-zinc-50">
         <div className="container py-14">
           <div className="flex items-center gap-5 lg:gap-10">
-            <div className="h-px hidden lg:block w-full flex-1 bg-[#a09389]/20" />
+            <div className="hidden h-px w-full flex-1 bg-[#a09389]/20 lg:block" />
 
-            <h2 className="select-none font-corinthia text-5xl lg:text-6xl text-[#baaa9e]">
+            <h2 className="select-none font-corinthia text-5xl text-[#baaa9e] lg:text-6xl">
               Detalhes da festa
             </h2>
             <div className="h-px w-full flex-1 bg-[#a09389]/20" />
@@ -124,12 +134,15 @@ export function Home() {
 
           {settings.details.map((detail, i) => {
             return (
-              <div key={i} className="mt-10 flex flex-col lg:flex-row items-start gap-10">
-                <div className="lg:flex hidden size-12 items-center justify-center rounded-full bg-[#a09389]/10 text-lg font-semibold text-[#a09389]">
+              <div
+                key={i}
+                className="mt-10 flex flex-col items-start gap-10 lg:flex-row"
+              >
+                <div className="hidden size-12 items-center justify-center rounded-full bg-[#a09389]/10 text-lg font-semibold text-[#a09389] lg:flex">
                   {i + 1}
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-lg lg:text-2xl text-balance font-semibold text-zinc-500">
+                  <h2 className="text-balance text-lg font-semibold text-zinc-500 lg:text-2xl">
                     {detail.title}
                   </h2>
                   <p className="mt-2 text-lg font-medium text-zinc-500">
@@ -159,9 +172,65 @@ export function Home() {
         </div>
       </section>
 
+      <section ref={refGifts} className="border-b bg-zinc-50">
+        <div className="container py-14">
+          <div className="flex items-center gap-5 lg:gap-10">
+            <div className="hidden h-px w-full flex-1 bg-[#a09389]/20 lg:block" />
+
+            <h2 className="select-none font-corinthia text-5xl text-[#baaa9e] lg:text-6xl">
+              Lista de presentes
+            </h2>
+            <div className="h-px w-full flex-1 bg-[#a09389]/20" />
+          </div>
+
+          <div className="flex justify-center">
+            <p className="text-md mt-3 max-w-md text-center text-zinc-500 lg:text-lg">
+              Abaixo temos as listas de presentes que montamos em várias lojas
+              diferentes, ajude somente se você puder! só sua presença já é mais
+              que especial.
+            </p>
+          </div>
+
+          <div className="mt-10 grid grid-cols-3 gap-5">
+            {settings.lists.map((list, i) => {
+              return (
+                <div key={i} className="rounded-md border bg-white p-4">
+                  <div className="flex items-center gap-2">
+                    <div className="size-10 rounded-full bg-zinc-50 flex items-center justify-center text-zinc-600">
+                      <HeartHandshakeIcon className="size-4" />
+                    </div>
+                    <h2 className="text-xl font-semibold text-zinc-600">
+                      {list.title}
+                    </h2>
+                  </div>
+                  <p className="mt-2 text-zinc-600 text-sm">
+                    Preparamos uma seleção especial de presentes na {list.title} para
+                    tornar seu momento ainda mais especial. Confira a lista
+                    completa.
+                  </p>
+
+                  <Button
+                    asChild
+                    type="button"
+                    variant="outline"
+                    className="mt-5 w-full"
+                    title="Clique para acessar a lista"
+                  >
+                    <Link to={list.href} target="_blank">
+                      <Link2Icon className="mr-2 size-4" />
+                      Acessar lista
+                    </Link>
+                  </Button>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
       <section ref={refLocal}>
-        <div className="container flex flex-col-reverse lg:flex-row items-center gap-10 py-14">
-          <div className="flex-[1.5] w-full">
+        <div className="container flex flex-col-reverse items-center gap-10 py-14 lg:flex-row">
+          <div className="w-full flex-[1.5]">
             <div className="overflow-hidden rounded-md border-2">
               <iframe
                 width="100%"
@@ -173,11 +242,11 @@ export function Home() {
           </div>
 
           <div className="flex-1">
-            <h2 className="font-corinthia text-5xl lg:text-6xl text-[#baaa9e]">
+            <h2 className="font-corinthia text-5xl text-[#baaa9e] lg:text-6xl">
               Local da festa
             </h2>
 
-            <p className="mt-2 text-md lg:text-lg font-medium text-zinc-500">
+            <p className="text-md mt-2 font-medium text-zinc-500 lg:text-lg">
               A nossa festa de casa nova será realizada no Sitio Chico Bento nos
               fundos de Biguaçu, para facilitar a ida e volta de todos os
               convidados.
@@ -204,9 +273,9 @@ export function Home() {
         </div>
       </section>
 
-      <footer className="pointer-events-none flex select-none items-center justify-center bg-[#a09389] py-2 text-xs lg:text-sm text-white">
+      <footer className="pointer-events-none flex select-none items-center justify-center bg-[#a09389] py-2 text-xs text-white lg:text-sm">
         <CopyrightIcon className="mr-1 size-3" /> {new Date().getFullYear()} |
-        Todos os direito reservados - criado por Rafael Pereira
+        Direitos reservados - criado por Rafael Pereira
       </footer>
     </main>
   );

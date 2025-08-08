@@ -11,12 +11,30 @@
       "href": "/#detalhes-da-festa"
     },
     {
+      "title": "Lista de presentes",
+      "href": "/#lista-de-presentes"
+    },
+    {
       "title": "Local da festa",
       "href": "/#local-da-festa"
     },
     {
       "title": "Confirmar presença",
       "href": "/#confirmar-presenca"
+    }
+  ],
+  "lists": [
+    {
+      "title": "Havan",
+      "href": "#"
+    },
+    {
+      "title": "Camicado",
+      "href": "#"
+    },
+    {
+      "title": "Amazon",
+      "href": "#"
     }
   ],
   "details": [
