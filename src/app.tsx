@@ -10,10 +10,10 @@ import { router } from './router'
 export function App() {
   return (
     <HelmetProvider>
-      <Helmet titleTemplate="%s | Template Nitro HUB Frontend" />
+      <Helmet titleTemplate="%s | Chá de casa nova - Rafael & Nicole" />
       <ThemeProvider
-        storageKey="template-nitro-hub-frontend"
-        defaultTheme="dark"
+        defaultTheme="light"
+        storageKey="cha-de-casa-nova-rafael-e-nicole"
       >
         <QueryClientProvider client={queryClient}>
           <RouterProvider router={router} />

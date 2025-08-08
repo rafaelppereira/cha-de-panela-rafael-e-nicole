@@ -8,12 +8,17 @@ module.exports = {
       center: true,
       padding: '2rem',
       screens: {
-        '2xl': '1400px',
+        '2xl': '1200px',
       },
     },
     extend: {
       fontFamily: {
         sans: 'Plus Jakarta Sans',
+        corinthia: 'Corinthia',
+        questrial: 'Questrial',
+      },
+      backgroundImage: {
+        banner: 'url(/background.png)',
       },
       fontSize: {
         xxs: '0.625rem',

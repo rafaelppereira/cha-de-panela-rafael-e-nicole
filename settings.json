@@ -1,0 +1,42 @@
+{
+  "date": "2025-11-10",
+  "hour": "20h",
+  "navlinks": [
+    {
+      "title": "Início",
+      "href": "/"
+    },
+    {
+      "title": "Detalhes da festa",
+      "href": "/#detalhes-da-festa"
+    },
+    {
+      "title": "Local da festa",
+      "href": "/#local-da-festa"
+    },
+    {
+      "title": "Confirmar presença",
+      "href": "/#confirmar-presenca"
+    }
+  ],
+  "details": [
+    {
+      "title": "Chopp Brahma e bebidas não alcoólicas",
+      "description": "Teremos chopp gelado para os amantes de uma boa cerveja, além de bebidas não alcoólicas para todos os gostos: Coca-Cola, Guaraná, água e suco. Assim, todo mundo pode curtir e se refrescar enquanto aproveita cada momento dessa noite especial!"
+    },
+    {
+      "title": "Carreteiro & docinhos",
+      "description": "Para completar a festa, vamos servir um delicioso arroz carreteiro, feito com muito capricho, e docinhos irresistíveis para adoçar a noite. Porque aqui a diversão vem acompanhada de comida boa e sabor de quero mais!"
+    },
+    {
+      "title": "Banda de pagode",
+      "description": "Para garantir que essa noite seja inesquecível, preparamos uma surpresa especial: contratamos o Pagode Du Bom, que vai embalar a galera com um repertório cheio de sucessos, alegria e muito ritmo! Prepare-se para cantar, dançar e se divertir do início ao fim, porque essa festa promete ser pura energia e descontração. Venha viver momentos únicos e celebrar com a gente nessa noite incrível!",
+      "links": [
+        {
+          "title": "@pagodedubom",
+          "href": "https://instagram.com/pagodedubom"
+        }
+      ]
+    }
+  ]
+}
