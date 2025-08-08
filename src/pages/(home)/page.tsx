@@ -59,45 +59,7 @@ export function Home() {
 
   return (
     <main>
-      <Helmet title="Você foi convidado">
-        <meta
-          name="description"
-          content="Você foi convidado para o Chá de casa nova de Rafael e Nicole! Venha celebrar conosco este momento especial."
-        />
-
-        <meta
-          name="keywords"
-          content="chá de casa nova, casamento, Rafael e Nicole, convite, festa"
-        />
-
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="Chá de casa nova | Rafael & Nicole" />
-        <meta
-          property="og:description"
-          content="Você foi convidado para celebrar o Chá de casa nova de Rafael e Nicole! 💍"
-        />
-        <meta
-          property="og:image"
-          content="https://cha-de-panela-rafael-e-nicole.vercel.app/rafael-e-nicole.jpeg"
-        />
-        <meta property="og:url" content="https://rafaelnicole.com.br" />
-        <meta property="og:locale" content="pt_BR" />
-
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Chá de casa nova | Rafael & Nicole" />
-        <meta
-          name="twitter:description"
-          content="Você foi convidado para o Chá de casa nova de Rafael e Nicole! 💍"
-        />
-        <meta
-          name="twitter:image"
-          content="https://cha-de-panela-rafael-e-nicole.vercel.app/rafael-e-nicole.jpeg"
-        />
-
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-        <meta name="theme-color" content="#a09389" />
-      </Helmet>
+      <Helmet title="Você foi convidado" />
 
       <Header />
 
