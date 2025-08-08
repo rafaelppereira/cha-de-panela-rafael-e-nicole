@@ -78,7 +78,7 @@ export function Home() {
         />
         <meta
           property="og:image"
-          content="https://seudominio.com/imagem-compartilhamento.jpg"
+          content="https://cha-de-panela-rafael-e-nicole.vercel.app/rafael-e-nicole.jpeg"
         />
         <meta property="og:url" content="https://rafaelnicole.com.br" />
         <meta property="og:locale" content="pt_BR" />
@@ -91,7 +91,7 @@ export function Home() {
         />
         <meta
           name="twitter:image"
-          content="https://seudominio.com/imagem-compartilhamento.jpg"
+          content="https://cha-de-panela-rafael-e-nicole.vercel.app/rafael-e-nicole.jpeg"
         />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
