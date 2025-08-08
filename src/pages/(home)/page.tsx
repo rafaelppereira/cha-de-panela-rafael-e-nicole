@@ -35,12 +35,12 @@ export function Home() {
       });
     }
 
-    // if (hash === "#detalhes-da-festa") {
-    //   window.scroll({
-    //     top: refDetails.current.offsetTop - 80,
-    //     behavior: "smooth",
-    //   });
-    // }
+    if (hash === "#detalhes-da-festa") {
+      window.scroll({
+        top: refDetails.current.offsetTop - 80,
+        behavior: "smooth",
+      });
+    }
 
     if (hash === "#lista-de-presentes") {
       window.scroll({
@@ -59,7 +59,45 @@ export function Home() {
 
   return (
     <main>
-      <Helmet title="Você foi convidado" />
+      <Helmet title="Você foi convidado">
+        <meta
+          name="description"
+          content="Você foi convidado para o Chá de casa nova de Rafael e Nicole! Venha celebrar conosco este momento especial."
+        />
+
+        <meta
+          name="keywords"
+          content="chá de casa nova, casamento, Rafael e Nicole, convite, festa"
+        />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Chá de casa nova | Rafael & Nicole" />
+        <meta
+          property="og:description"
+          content="Você foi convidado para celebrar o Chá de casa nova de Rafael e Nicole! 💍"
+        />
+        <meta
+          property="og:image"
+          content="https://seudominio.com/imagem-compartilhamento.jpg"
+        />
+        <meta property="og:url" content="https://rafaelnicole.com.br" />
+        <meta property="og:locale" content="pt_BR" />
+
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Chá de casa nova | Rafael & Nicole" />
+        <meta
+          name="twitter:description"
+          content="Você foi convidado para o Chá de casa nova de Rafael e Nicole! 💍"
+        />
+        <meta
+          name="twitter:image"
+          content="https://seudominio.com/imagem-compartilhamento.jpg"
+        />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <meta name="theme-color" content="#a09389" />
+      </Helmet>
 
       <Header />
 
@@ -226,7 +264,7 @@ export function Home() {
             })}
           </div>
 
-          <div className="mt-10 flex flex-col items-center gap-5 md:gap-10 md:flex-row">
+          <div className="mt-10 flex flex-col items-center gap-5 md:flex-row md:gap-10">
             <div className="flex-1">
               <h2 className="text-2xl font-semibold text-zinc-500">
                 Prefere de outra maneira?
@@ -239,7 +277,10 @@ export function Home() {
               </p>
 
               <div className="mt-5 inline-flex items-center gap-3 rounded-md border bg-white p-2 text-sm">
-                <CopyToClipboard text="cbdc8f29-9ff1-47e4-9819-11e922758985" onCopy={() => toast.success('PIX copiado com sucesso')}>
+                <CopyToClipboard
+                  text="cbdc8f29-9ff1-47e4-9819-11e922758985"
+                  onCopy={() => toast.success("PIX copiado com sucesso")}
+                >
                   <Button
                     size="icon"
                     title="Clique para copiar o pix"
@@ -252,8 +293,12 @@ export function Home() {
                 <h2>cbdc8f29-9ff1-47e4-9819-11e922758985</h2>
               </div>
             </div>
-            <div className="w-full md:w-auto flex justify-start">
-              <img src="/pix.jpeg" alt="Imagem do PIX" className="w-full md:w-[250px]" />
+            <div className="flex w-full justify-start md:w-auto">
+              <img
+                src="/pix.jpeg"
+                alt="Imagem do PIX"
+                className="w-full md:w-[250px]"
+              />
             </div>
           </div>
         </div>
