@@ -183,15 +183,15 @@ export function Home() {
             <div className="h-px w-full flex-1 bg-[#a09389]/20" />
           </div>
 
-          <div className="flex justify-center">
-            <p className="text-md mt-3 max-w-md text-center text-zinc-500 lg:text-lg">
+          <div className="flex lg:justify-center">
+            <p className="text-md mt-3 max-w-md lg:text-center text-zinc-500 lg:text-lg">
               Abaixo temos as listas de presentes que montamos em várias lojas
               diferentes, ajude somente se você puder! só sua presença já é mais
               que especial.
             </p>
           </div>
 
-          <div className="mt-10 grid grid-cols-3 gap-5">
+          <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {settings.lists.map((list, i) => {
               return (
                 <div key={i} className="rounded-md border bg-white p-4">
